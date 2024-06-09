@@ -1,12 +1,14 @@
 from get_weather import get_weather
 import pandas as pd
 
-hourly_dataframe, latitude, longitude, elevation = get_weather(16, 55.710803, 37.473970)
+hourly_dataframe, latitude, longitude, elevation = get_weather(92, 16, 55.640833, 160.240833)
 print(f"Координаты: {latitude} с.ш. {longitude} в.д.")
 print(f"Высота: {elevation} м")
 # print(hourly_dataframe)
 
-target_datetime = pd.to_datetime("2024-06-09 16:00:00", utc=True)
+target_datetime = pd.to_datetime("2024-05-09 16:00:00", utc=True)
+
+# hourly_dataframe.to_csv('По следам недавних извержений.csv')
 
 matching_row = hourly_dataframe[hourly_dataframe['date'] == target_datetime]
 
